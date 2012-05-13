@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Satyamev Jayate Twitter Leader Board</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+<!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
+for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+mixpanel.init("313c4d1a6b604830c7347d2096ccfd4d");</script><!-- end Mixpanel -->
+
+</head>
+<body>
+<header role="banner" id="page_header">
+<div class="page">
+	<h1>
+<a href="/" title="SatyamevJayate">
+	<%= image_tag("logo_SatyamevJayate-2012.png", :id => 'rc_logo' )%>
+	<%= image_tag("ribbon.png", :id => 'austin_ribbon' )%>
+</a>		
+	</h1>
+</div>
+
+<nav role="navigation" id="main_nav">
+    <div id="hashtag">
+	  <a href="https://twitter.com/#!/search/realtime/%23SatyamevJayate%20OR%20%40smjindia">
+		  #SatyamevJayate OR @smjindia
+	  </a>	
+      
+    </div>
+</nav>
+</header>
+
+
+<%= yield %>
+
+<footer id="page_footer" role="banner">
+</footer>
+</body>
+</html>

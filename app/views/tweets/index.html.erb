@@ -1,0 +1,44 @@
+<section id="pagebody" role="main">
+	
+	
+  <h1 class="tk-adelle">Tweets</h1>
+
+  <div id="sessions">
+	  <h3 class="tk-adelle">People who are leading!!</h3>
+	  <div id="tweets">
+	  	<%= render :partial => 'tweet', :locals => {:tweets => @tweets}%>
+	  </div>
+  </div>
+  
+
+	
+    <section id="sidebar">
+  		<div id="sponsors">
+
+			<h3><a href="https://twitter.com/smjindia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @smjindia</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</h3>
+
+			<h3><a href="https://twitter.com/raysrashmi" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @raysrashmi</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</h3>
+			<h3>Leaders</h3>
+
+			<div class="roundbox">
+				<% @users.each do |user| %>
+				  <div class="logo">
+                    <img src=<%= "#{@redis.hget(user[:member], "profile_image_url")}"%>  width="75"  height="75"/>
+                    <h4><a href="http://twitter.com/<%= "#{@redis.hget(user[:member], "from_user")}"%>">
+                      @<%= "#{@redis.hget(user[:member], "from_user")}"%> (<%= user[:score].to_i%>)
+                    </a></h4>
+				  </div>
+				 <%end%>
+			</div> <!-- .roundbox -->
+		</div>
+	</section>
+
+
+ </section>
+ 
+ <%= will_paginate @tweets %>
+ 
