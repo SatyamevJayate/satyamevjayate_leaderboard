@@ -47,11 +47,11 @@ class TweetsController < ApplicationController
   private
 
   def tweet_key
-    @tweet_key ||= "tweets"
+    @tweet_key ||= "satyamevjayate_leaderboard_tweets"
   end
 
   def users_key
-    @users_key ||= "users"
+    @users_key ||= "satyamevjayate_leaderboard_users"
   end
 
   def highscore_lb
